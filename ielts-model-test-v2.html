@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Model Test 1 — Practice</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F6F5F0;--sheet:#fff;--ink:#1C2B4A;--graphite:#52524E;--red:#BE1E2D;--pencil:#B9B5A7;--ok:#2E7D52;--warn:#B7791F;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'IBM Plex Sans',sans-serif;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:16px}
+header{background:var(--sheet);border-bottom:3px solid var(--red);position:sticky;top:0;z-index:50}
+.head-inner{max-width:1080px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.stamp{border:2px solid var(--red);color:var(--red);font-family:'IBM Plex Mono',monospace;font-size:.72rem;padding:4px 8px;border-radius:4px;letter-spacing:.08em;transform:rotate(-2deg)}
+h1{font-size:1.05rem;font-weight:700}
+h1 small{display:block;font-weight:500;color:var(--graphite);font-size:.74rem}
+.timer{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:1rem;background:var(--ink);color:#fff;padding:6px 12px;border-radius:6px;min-width:118px;text-align:center}
+.timer.low{background:var(--red)}
+nav{max-width:1080px;margin:0 auto;padding:0 16px;display:flex;gap:6px;overflow-x:auto}
+nav button{appearance:none;border:none;background:none;font:inherit;font-weight:600;font-size:.85rem;color:var(--graphite);padding:10px 14px;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap}
+nav button[aria-selected="true"]{color:var(--red);border-bottom-color:var(--red)}
+.layout{display:grid;grid-template-columns:1fr 240px;gap:16px;align-items:start;margin-top:16px}
+@media(max-width:860px){.layout{grid-template-columns:1fr}}
+.card{background:var(--sheet);border:1px solid #E5E2D9;border-radius:var(--radius);padding:22px}
+section.panel{display:none}
+section.panel.active{display:block}
+aside.sheet{background:var(--sheet);border:1px solid #E5E2D9;border-radius:var(--radius);padding:14px;position:sticky;top:118px}
+aside.sheet h3{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--graphite);margin-bottom:8px}
+.bubbles{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.bubble{aspect-ratio:1;border:1.6px solid var(--pencil);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.66rem;font-family:'IBM Plex Mono',monospace;color:var(--graphite);cursor:pointer;background:#fff;transition:all .15s}
+.bubble.filled{background:var(--ink);border-color:var(--ink);color:#fff}
+.sheet-note{font-size:.7rem;color:var(--graphite);margin-top:10px}
+@media(max-width:860px){aside.sheet{position:static;order:-1}.bubbles{grid-template-columns:repeat(11,1fr)}}
+h2{font-family:'Lora',serif;font-size:1.45rem;margin-bottom:4px}
+.section-meta{font-size:.8rem;color:var(--graphite);margin-bottom:18px;display:flex;gap:14px;flex-wrap:wrap}
+.instructions{background:#FBF4E4;border-left:4px solid var(--warn);padding:10px 14px;border-radius:0 8px 8px 0;font-size:.86rem;margin:14px 0 20px}
+.passage{font-family:'Lora',serif;font-size:1.02rem;line-height:1.75}
+.passage p{margin-bottom:1em}
+.para-label{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--red);font-weight:500;margin-right:8px}
+.q-group{margin-top:26px;border-top:1px dashed var(--pencil);padding-top:18px}
+.q-group h4{font-size:.95rem;margin-bottom:4px}
+.task{font-size:.83rem;color:var(--graphite);margin-bottom:14px}
+.q{margin-bottom:16px;padding:12px 14px;border:1px solid #ECEAE2;border-radius:8px;background:#FDFCFA}
+.qnum{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;align-items:center;justify-content:center;font-size:.72rem;font-family:'IBM Plex Mono',monospace;margin-right:8px;flex-shrink:0}
+.q-text{display:flex;align-items:flex-start;font-size:.93rem;margin-bottom:8px}
+.opts label{display:flex;gap:8px;align-items:flex-start;padding:6px 8px;border-radius:6px;cursor:pointer;font-size:.9rem}
+.opts label:hover{background:#F2F0E8}
+.opts input{margin-top:3px;accent-color:var(--red)}
+input[type=text],input[type=email],input[type=tel]{font:inherit;font-size:.9rem;padding:7px 10px;border:1.6px solid var(--pencil);border-radius:6px;background:#fff}
+input[type=text]:focus,input[type=email]:focus,input[type=tel]:focus{outline:none;border-color:var(--ink)}
+.gap input[type=text]{width:160px}
+.btn{appearance:none;font:inherit;font-weight:600;font-size:.9rem;border:none;border-radius:8px;padding:10px 18px;cursor:pointer}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:#A0151F}
+.btn-red:disabled{background:#ccc;cursor:not-allowed}
+.btn-row{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.player{display:flex;align-items:center;gap:14px;background:var(--ink);color:#fff;border-radius:var(--radius);padding:16px 18px;margin:14px 0 22px;flex-wrap:wrap}
+.player .status{font-size:.84rem;opacity:.85}
+.eq{display:flex;gap:3px;align-items:flex-end;height:22px}
+.eq span{width:4px;background:var(--red);border-radius:2px;height:6px}
+.eq.playing span{animation:eq .7s ease-in-out infinite alternate}
+.eq.playing span:nth-child(2){animation-delay:.15s}.eq.playing span:nth-child(3){animation-delay:.3s}.eq.playing span:nth-child(4){animation-delay:.45s}
+@keyframes eq{to{height:22px}}
+@media(prefers-reduced-motion:reduce){.eq.playing span{animation:none;height:14px}}
+textarea{width:100%;min-height:230px;font-family:'Lora',serif;font-size:1rem;line-height:1.7;padding:14px;border:1.6px solid var(--pencil);border-radius:8px;background:#fff;resize:vertical}
+textarea:focus{outline:none;border-color:var(--ink)}
+.wc{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--graphite);margin-top:6px}
+.wc.ok{color:var(--ok)}
+.chart-box{background:#FDFCFA;border:1px solid #ECEAE2;border-radius:8px;padding:14px;margin:14px 0}
+
+/* Registration page */
+#panel-register .field{margin-bottom:18px}
+#panel-register label{display:block;font-weight:600;font-size:.88rem;margin-bottom:5px}
+#panel-register label span{color:var(--red)}
+#panel-register input{width:100%;max-width:420px}
+#panel-register .helper{font-size:.78rem;color:var(--graphite);margin-top:4px}
+.reg-intro{background:#EEF2FF;border-left:4px solid #4F46E5;padding:12px 16px;border-radius:0 8px 8px 0;font-size:.88rem;margin-bottom:24px;line-height:1.6}
+.err{color:var(--red);font-size:.82rem;margin-top:4px;display:none}
+
+/* Submission screen */
+#panel-submitted{text-align:center;padding:60px 22px}
+#panel-submitted .icon{font-size:3rem;margin-bottom:16px}
+#panel-submitted h2{font-family:'Lora',serif;font-size:1.8rem;margin-bottom:12px}
+#panel-submitted p{color:var(--graphite);max-width:420px;margin:0 auto 10px;font-size:.95rem}
+.spinner{display:inline-block;width:22px;height:22px;border:3px solid #ddd;border-top-color:var(--red);border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:8px}
+@keyframes spin{to{transform:rotate(360deg)}}
+footer{max-width:1080px;margin:30px auto;padding:0 16px;font-size:.74rem;color:var(--graphite)}
+</style>
+</head>
+<body>
+<header>
+  <div class="head-inner">
+    <div class="stamp">CANDIDATE&nbsp;COPY</div>
+    <h1>IELTS Model Test 1<small>Academic · Listening, Reading &amp; Writing</small></h1>
+    <div class="timer" id="timer">--:--</div>
+  </div>
+  <nav role="tablist" id="tabs">
+    <button role="tab" aria-selected="true" data-tab="register">Registration</button>
+    <button role="tab" aria-selected="false" data-tab="listening" disabled>1 · Listening</button>
+    <button role="tab" aria-selected="false" data-tab="reading" disabled>2 · Reading</button>
+    <button role="tab" aria-selected="false" data-tab="writing" disabled>3 · Writing</button>
+  </nav>
+</header>
+
+<div class="wrap">
+<div class="layout">
+<main>
+
+<!-- ===== REGISTRATION ===== -->
+<section class="panel active card" id="panel-register">
+  <h2>Candidate Registration</h2>
+  <p style="color:var(--graphite);font-size:.88rem;margin-bottom:20px">Complete all fields before starting the test.</p>
+  <div class="reg-intro">
+    ⏱ This test has timed sections: <strong>Listening 10 min · Reading 20 min · Writing 60 min.</strong><br>
+    Your answers will be submitted to your instructor upon completion. You will <strong>not</strong> see your score — your instructor will review your submission and provide feedback separately.
+  </div>
+  <div class="field">
+    <label>Full Name <span>*</span></label>
+    <input type="text" id="reg-name" placeholder="As on your official ID" autocomplete="name">
+    <div class="err" id="err-name">Please enter your full name.</div>
+  </div>
+  <div class="field">
+    <label>Email Address <span>*</span></label>
+    <input type="email" id="reg-email" placeholder="yourname@email.com" autocomplete="email">
+    <div class="err" id="err-email">Please enter a valid email address.</div>
+  </div>
+  <div class="field">
+    <label>Phone Number <span>*</span> <span style="font-weight:400;color:var(--graphite)">(International Format)</span></label>
+    <input type="tel" id="reg-phone" placeholder="+64 21 123 4567" autocomplete="tel">
+    <div class="helper">Include your country code, e.g. +64 (NZ) · +92 (Pakistan) · +1 (USA/Canada)</div>
+    <div class="err" id="err-phone">Please enter your phone number with country code.</div>
+  </div>
+  <div class="field">
+    <label>Address <span>*</span></label>
+    <input type="text" id="reg-address" placeholder="Street number and street name" autocomplete="street-address">
+    <div class="err" id="err-address">Please enter your street address.</div>
+  </div>
+  <div class="field">
+    <label>City <span>*</span></label>
+    <input type="text" id="reg-city" placeholder="e.g. Auckland" autocomplete="address-level2">
+    <div class="err" id="err-city">Please enter your city.</div>
+  </div>
+  <div class="field">
+    <label>Country <span>*</span></label>
+    <input type="text" id="reg-country" placeholder="e.g. New Zealand" autocomplete="country-name">
+    <div class="err" id="err-country">Please enter your country.</div>
+  </div>
+  <div class="btn-row">
+    <button class="btn btn-red" id="startBtn">Start Test →</button>
+  </div>
+</section>
+
+<!-- ===== LISTENING ===== -->
+<section class="panel card" id="panel-listening">
+  <h2>Listening</h2>
+  <div class="section-meta"><span>⏱ 10 minutes</span><span>Questions 1–8</span><span>Recording plays once</span></div>
+  <div class="instructions">Press play when ready — the timer starts with the audio. In the real test the recording plays <strong>once only</strong>. A replay button appears afterwards for practice.</div>
+  <div class="player">
+    <button class="btn btn-red" id="playBtn">▶ Play recording</button>
+    <div class="eq" id="eq"><span></span><span></span><span></span><span></span></div>
+    <div class="status" id="audioStatus">Section 1 · A phone call to a leisure centre</div>
+  </div>
+  <div class="q-group">
+    <h4>Questions 1–5 · Form completion</h4>
+    <p class="task">Write <strong>NO MORE THAN TWO WORDS AND/OR A NUMBER</strong> for each answer.</p>
+    <div class="q" id="qbox1"><div class="q-text"><span class="qnum">1</span><span>Surname: <span class="gap"><input type="text" data-q="1" aria-label="Q1"></span></span></div></div>
+    <div class="q" id="qbox2"><div class="q-text"><span class="qnum">2</span><span>Contact number: <span class="gap"><input type="text" data-q="2" aria-label="Q2"></span></span></div></div>
+    <div class="q" id="qbox3"><div class="q-text"><span class="qnum">3</span><span>Class she wants to join: beginners' <span class="gap"><input type="text" data-q="3" aria-label="Q3"></span></span></div></div>
+    <div class="q" id="qbox4"><div class="q-text"><span class="qnum">4</span><span>Day of the class: <span class="gap"><input type="text" data-q="4" aria-label="Q4"></span> evenings</span></div></div>
+    <div class="q" id="qbox5"><div class="q-text"><span class="qnum">5</span><span>She must bring a <span class="gap"><input type="text" data-q="5" aria-label="Q5"></span></span></div></div>
+  </div>
+  <div class="q-group">
+    <h4>Questions 6–8 · Multiple choice</h4>
+    <p class="task">Choose the correct letter, <strong>A, B or C</strong>.</p>
+    <div class="q" id="qbox6">
+      <div class="q-text"><span class="qnum">6</span><span>How much will Sarah pay per class if she books online?</span></div>
+      <div class="opts"><label><input type="radio" name="q6" value="A" data-q="6">A&nbsp; $12</label><label><input type="radio" name="q6" value="B" data-q="6">B&nbsp; $15</label><label><input type="radio" name="q6" value="C" data-q="6">C&nbsp; $18</label></div>
+    </div>
+    <div class="q" id="qbox7">
+      <div class="q-text"><span class="qnum">7</span><span>Parking at the centre is</span></div>
+      <div class="opts"><label><input type="radio" name="q7" value="A" data-q="7">A&nbsp; free for members only.</label><label><input type="radio" name="q7" value="B" data-q="7">B&nbsp; free after 6 pm.</label><label><input type="radio" name="q7" value="C" data-q="7">C&nbsp; paid at all times.</label></div>
+    </div>
+    <div class="q" id="qbox8">
+      <div class="q-text"><span class="qnum">8</span><span>To register, Sarah needs to bring</span></div>
+      <div class="opts"><label><input type="radio" name="q8" value="A" data-q="8">A&nbsp; photo identification.</label><label><input type="radio" name="q8" value="B" data-q="8">B&nbsp; proof of address.</label><label><input type="radio" name="q8" value="C" data-q="8">C&nbsp; a medical certificate.</label></div>
+    </div>
+  </div>
+  <div class="btn-row"><button class="btn btn-red" data-goto="reading">Continue to Reading →</button></div>
+</section>
+
+<!-- ===== READING ===== -->
+<section class="panel card" id="panel-reading">
+  <h2>Reading</h2>
+  <div class="section-meta"><span>⏱ 20 minutes</span><span>Questions 9–21</span></div>
+  <div class="instructions">Read the passage and answer Questions 9–21.</div>
+  <article class="passage">
+    <h3 style="font-family:'Lora',serif;margin-bottom:12px">Rooftops that breathe: the return of the living roof</h3>
+    <p><span class="para-label">A</span>Long before the term "green infrastructure" existed, people were already living under planted roofs. In Scandinavia, sod roofs — layers of birch bark topped with turf — have sheltered farmhouses for many centuries, prized because the living layer provided natural insulation through freezing winters. The modern green roof, however, is a more engineered affair: a waterproof membrane, a root barrier, a drainage layer and a growing medium, all designed to keep a building dry while a garden thrives above it.</p>
+    <p><span class="para-label">B</span>Germany is widely regarded as the leader in contemporary adoption, with decades of supportive building codes and an estimated hundred million square metres of planted roofs already installed. Designers there distinguish between two broad families. Extensive green roofs use a shallow growing medium, are planted with hardy sedums and grasses, and need very little maintenance once established. Intensive green roofs are closer to true rooftop parks, with deeper soil, larger plants and correspondingly greater structural demands.</p>
+    <p><span class="para-label">C</span>The case that cities make for living roofs rests, above all, on stormwater. A conventional roof sheds nearly all the rain that lands on it within minutes, sending sudden surges into pipes built for a smaller, drier city. A planted roof behaves more like a sponge: its vegetation and substrate capture a large share of each rainfall and release it slowly, easing the pressure on ageing drainage systems. The benefits do not stop there. In summer, the plants cool the air around them through evapotranspiration, and studies repeatedly show that buildings beneath living roofs spend noticeably less on summer cooling.</p>
+    <p><span class="para-label">D</span>Regulation has begun to follow the evidence. Toronto became the first city in North America to pass a bylaw requiring green roofs on most large new developments, and several European and Asian cities have introduced comparable rules or generous subsidies. Such mandates remain the exception rather than the norm, and most construction worldwide still proceeds with conventional roofing.</p>
+    <p><span class="para-label">E</span>What, then, holds the living roof back? The answer is rarely technical. Membranes and drainage products are mature, and structural solutions exist for most buildings. The obstacle is financial: the initial cost of a green roof can be two to three times that of a standard one, and the savings it generates — lower energy bills, longer membrane life, reduced flood damage — accrue slowly and often to someone other than the developer who pays. Until valuation methods catch up with these distributed benefits, the living roof will likely spread the way it has so far: steadily, quietly, one persuaded rooftop at a time.</p>
+  </article>
+  <div class="q-group">
+    <h4>Questions 9–13 · True / False / Not Given</h4>
+    <p class="task">Choose <strong>TRUE</strong>, <strong>FALSE</strong> or <strong>NOT GIVEN</strong>.</p>
+    <div class="q" id="qbox9"><div class="q-text"><span class="qnum">9</span><span>Planted roofs were first developed in the twentieth century.</span></div><div class="opts tfng" data-q="9"></div></div>
+    <div class="q" id="qbox10"><div class="q-text"><span class="qnum">10</span><span>Germany is considered the leading country for modern green roofs.</span></div><div class="opts tfng" data-q="10"></div></div>
+    <div class="q" id="qbox11"><div class="q-text"><span class="qnum">11</span><span>Buildings with green roofs tend to spend less on cooling in summer.</span></div><div class="opts tfng" data-q="11"></div></div>
+    <div class="q" id="qbox12"><div class="q-text"><span class="qnum">12</span><span>Most cities now require green roofs on large new buildings.</span></div><div class="opts tfng" data-q="12"></div></div>
+    <div class="q" id="qbox13"><div class="q-text"><span class="qnum">13</span><span>Green roofs increase the cost of building insurance.</span></div><div class="opts tfng" data-q="13"></div></div>
+  </div>
+  <div class="q-group">
+    <h4>Questions 14–17 · Multiple choice</h4>
+    <p class="task">Choose the correct letter, <strong>A, B, C or D</strong>.</p>
+    <div class="q" id="qbox14">
+      <div class="q-text"><span class="qnum">14</span><span>The main argument cities use in favour of green roofs concerns</span></div>
+      <div class="opts"><label><input type="radio" name="q14" value="A" data-q="14">A&nbsp; managing rainwater.</label><label><input type="radio" name="q14" value="B" data-q="14">B&nbsp; improving air quality.</label><label><input type="radio" name="q14" value="C" data-q="14">C&nbsp; increasing property values.</label><label><input type="radio" name="q14" value="D" data-q="14">D&nbsp; creating public parks.</label></div>
+    </div>
+    <div class="q" id="qbox15">
+      <div class="q-text"><span class="qnum">15</span><span>Extensive green roofs are characterised by</span></div>
+      <div class="opts"><label><input type="radio" name="q15" value="A" data-q="15">A&nbsp; deep soil and large plants.</label><label><input type="radio" name="q15" value="B" data-q="15">B&nbsp; shallow soil and low maintenance.</label><label><input type="radio" name="q15" value="C" data-q="15">C&nbsp; high structural demands.</label><label><input type="radio" name="q15" value="D" data-q="15">D&nbsp; rooftop park facilities.</label></div>
+    </div>
+    <div class="q" id="qbox16">
+      <div class="q-text"><span class="qnum">16</span><span>The writer mentions the Toronto bylaw to illustrate</span></div>
+      <div class="opts"><label><input type="radio" name="q16" value="A" data-q="16">A&nbsp; the technical limits of green roofs.</label><label><input type="radio" name="q16" value="B" data-q="16">B&nbsp; opposition from property developers.</label><label><input type="radio" name="q16" value="C" data-q="16">C&nbsp; how regulation can drive adoption.</label><label><input type="radio" name="q16" value="D" data-q="16">D&nbsp; the cost of new developments.</label></div>
+    </div>
+    <div class="q" id="qbox17">
+      <div class="q-text"><span class="qnum">17</span><span>The biggest barrier to green roofs is</span></div>
+      <div class="opts"><label><input type="radio" name="q17" value="A" data-q="17">A&nbsp; immature technology.</label><label><input type="radio" name="q17" value="B" data-q="17">B&nbsp; structural weakness of buildings.</label><label><input type="radio" name="q17" value="C" data-q="17">C&nbsp; public indifference.</label><label><input type="radio" name="q17" value="D" data-q="17">D&nbsp; how costs and benefits are shared.</label></div>
+    </div>
+  </div>
+  <div class="q-group">
+    <h4>Questions 18–21 · Sentence completion</h4>
+    <p class="task">Complete with <strong>ONE WORD ONLY</strong> from the passage.</p>
+    <div class="q" id="qbox18"><div class="q-text"><span class="qnum">18</span><span>Turf roofs provided natural <span class="gap"><input type="text" data-q="18"></span>.</span></div></div>
+    <div class="q" id="qbox19"><div class="q-text"><span class="qnum">19</span><span>Planted roofs ease pressure on urban <span class="gap"><input type="text" data-q="19"></span> systems.</span></div></div>
+    <div class="q" id="qbox20"><div class="q-text"><span class="qnum">20</span><span>Plants cool the air through <span class="gap"><input type="text" data-q="20"></span>.</span></div></div>
+    <div class="q" id="qbox21"><div class="q-text"><span class="qnum">21</span><span>The initial <span class="gap"><input type="text" data-q="21"></span> of a green roof can be two to three times higher.</span></div></div>
+  </div>
+  <div class="btn-row"><button class="btn btn-red" data-goto="writing">Continue to Writing →</button></div>
+</section>
+
+<!-- ===== WRITING ===== -->
+<section class="panel card" id="panel-writing">
+  <h2>Writing</h2>
+  <div class="section-meta"><span>⏱ 60 minutes</span><span>Task 1: 150+ words</span><span>Task 2: 250+ words</span></div>
+  <div class="q-group" style="border-top:none;padding-top:0">
+    <h4>Writing Task 1</h4>
+    <p class="task">The chart below shows household recycling rates in three countries (2000–2020). Summarise the information, selecting main features and making comparisons. Write at least <strong>150 words</strong>.</p>
+    <div class="chart-box">
+      <svg viewBox="0 0 560 300" role="img" aria-label="Recycling rates line chart" style="width:100%;height:auto">
+        <line x1="60" y1="20" x2="60" y2="250" stroke="#52524E" stroke-width="1.5"/>
+        <line x1="60" y1="250" x2="530" y2="250" stroke="#52524E" stroke-width="1.5"/>
+        <g font-family="IBM Plex Mono,monospace" font-size="11" fill="#52524E">
+          <text x="30" y="254">0%</text><text x="24" y="196">20%</text><text x="24" y="139">40%</text><text x="24" y="82">60%</text><text x="24" y="25">80%</text>
+          <text x="52" y="270">2000</text><text x="165" y="270">2005</text><text x="278" y="270">2010</text><text x="391" y="270">2015</text><text x="504" y="270">2020</text>
+        </g>
+        <g stroke="#E5E2D9" stroke-width="1"><line x1="60" y1="193" x2="530" y2="193"/><line x1="60" y1="136" x2="530" y2="136"/><line x1="60" y1="79" x2="530" y2="79"/></g>
+        <polyline fill="none" stroke="#BE1E2D" stroke-width="3" points="60,193 173,165 286,122 399,93 512,79"/>
+        <polyline fill="none" stroke="#1C2B4A" stroke-width="3" points="60,222 173,210 286,179 399,150 512,136"/>
+        <polyline fill="none" stroke="#B7791F" stroke-width="3" stroke-dasharray="6 4" points="60,165 173,170 286,162 399,167 512,158"/>
+        <g font-family="IBM Plex Sans,sans-serif" font-size="12" font-weight="600">
+          <text x="430" y="68" fill="#BE1E2D">Country A</text>
+          <text x="430" y="128" fill="#1C2B4A">Country B</text>
+          <text x="430" y="185" fill="#B7791F">Country C</text>
+        </g>
+      </svg>
+    </div>
+    <textarea id="task1" placeholder="Begin your Task 1 response here…"></textarea>
+    <div class="wc" id="wc1">0 words · minimum 150</div>
+  </div>
+  <div class="q-group">
+    <h4>Writing Task 2</h4>
+    <p class="task"><em>"Governments should invest more in public transport than in building new roads."</em> To what extent do you agree or disagree? Give reasons and include relevant examples. Write at least <strong>250 words</strong>.</p>
+    <textarea id="task2" style="min-height:300px" placeholder="Begin your Task 2 essay here…"></textarea>
+    <div class="wc" id="wc2">0 words · minimum 250</div>
+  </div>
+  <div class="btn-row">
+    <button class="btn btn-red" id="finishBtn">Submit test →</button>
+  </div>
+</section>
+
+<!-- ===== SUBMITTED ===== -->
+<section class="panel card" id="panel-submitted">
+  <div class="icon">✅</div>
+  <h2>Test Submitted</h2>
+  <p>Thank you — your answers have been recorded.</p>
+  <p>Your instructor will review your submission and provide feedback separately. You may now close this window.</p>
+  <p id="submitStatus" style="margin-top:16px;font-size:.82rem;color:var(--graphite)"></p>
+</section>
+
+</main>
+
+<aside class="sheet" aria-label="Answer sheet" id="answerSheet">
+  <h3>Answer sheet</h3>
+  <div class="bubbles" id="bubbles"></div>
+  <p class="sheet-note">Bubbles fill as you answer. Tap to jump to a question.</p>
+</aside>
+</div>
+</div>
+<footer>Original practice material — not affiliated with or endorsed by IELTS, Cambridge Assessment English, IDP, or the British Council.</footer>
+
+<script>
+(function(){
+"use strict";
+
+/* ── Config ── paste your Web App URL here after deploying the Apps Script ── */
+https://script.google.com/macros/s/AKfycbwRBskv1YpKD65v5MHLKzvTZkS39NGlxnVPX6CWSkvIoizSDD5J1eUOsWWf3UPJaRsm/exec
+/* ── Candidate info ── */
+let candidate = {};
+
+/* ── Answer store ── */
+const answers = {};
+const TOTAL_Q = 21;
+
+/* ── TFNG options ── */
+document.querySelectorAll('.tfng').forEach(box=>{
+  const q = box.dataset.q;
+  ['TRUE','FALSE','NOT GIVEN'].forEach(v=>{
+    const l = document.createElement('label');
+    l.innerHTML = '<input type="radio" name="q'+q+'" value="'+v+'" data-q="'+q+'"> '+v;
+    box.appendChild(l);
+  });
+});
+
+/* ── Answer sheet bubbles ── */
+const bWrap = document.getElementById('bubbles');
+for(let i=1;i<=TOTAL_Q;i++){
+  const b=document.createElement('button');
+  b.className='bubble'; b.textContent=i; b.id='bub'+i;
+  b.setAttribute('aria-label','Question '+i);
+  b.addEventListener('click',()=>{
+    const tab = i<=8?'listening':'reading';
+    showTab(tab);
+    setTimeout(()=>{ const el=document.getElementById('qbox'+i); if(el) el.scrollIntoView({behavior:'smooth',block:'center'}); },150);
+  });
+  bWrap.appendChild(b);
+}
+function fillBubble(q){ const b=document.getElementById('bub'+q); if(b) b.classList.add('filled'); }
+function clearBubble(q){ const b=document.getElementById('bub'+q); if(b) b.classList.remove('filled'); }
+
+/* ── Capture answers ── */
+document.querySelectorAll('input[data-q]').forEach(inp=>{
+  if(inp.type==='radio'){
+    inp.addEventListener('change',()=>{ answers[inp.dataset.q]=inp.value; fillBubble(inp.dataset.q); });
+  } else {
+    inp.addEventListener('input',()=>{
+      answers[inp.dataset.q]=inp.value.trim();
+      answers[inp.dataset.q] ? fillBubble(inp.dataset.q) : clearBubble(inp.dataset.q);
+    });
+  }
+});
+
+/* ── Tabs ── */
+const PANELS = {register:'panel-register',listening:'panel-listening',reading:'panel-reading',writing:'panel-writing',submitted:'panel-submitted'};
+function showTab(name){
+  document.querySelectorAll('#tabs button').forEach(b=>b.setAttribute('aria-selected', b.dataset.tab===name ? 'true':'false'));
+  Object.values(PANELS).forEach(id=>{ const el=document.getElementById(id); if(el) el.classList.remove('active'); });
+  const el=document.getElementById(PANELS[name]); if(el) el.classList.add('active');
+  const aside=document.getElementById('answerSheet');
+  aside.style.display = (name==='register'||name==='submitted') ? 'none' : '';
+  startSectionTimer(name);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.getElementById('tabs').addEventListener('click',e=>{
+  if(e.target.dataset.tab && e.target.getAttribute('aria-selected')!=='true' && !e.target.disabled) showTab(e.target.dataset.tab);
+});
+document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.goto)));
+document.getElementById('answerSheet').style.display='none';
+
+/* ── Registration validation ── */
+document.getElementById('startBtn').addEventListener('click',()=>{
+  let ok=true;
+  const fields=[
+    {id:'reg-name',  err:'err-name',   test: v=>v.trim().length>1},
+    {id:'reg-email', err:'err-email',  test: v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)},
+    {id:'reg-phone', err:'err-phone',  test: v=>/^\+[\d\s\-()]{6,20}$/.test(v.trim())},
+    {id:'reg-address',err:'err-address',test: v=>v.trim().length>3},
+    {id:'reg-city',  err:'err-city',   test: v=>v.trim().length>1},
+    {id:'reg-country',err:'err-country',test: v=>v.trim().length>1}
+  ];
+  fields.forEach(f=>{
+    const inp=document.getElementById(f.id);
+    const errEl=document.getElementById(f.err);
+    if(!f.test(inp.value)){
+      errEl.style.display='block'; inp.style.borderColor='var(--red)'; ok=false;
+    } else {
+      errEl.style.display='none'; inp.style.borderColor='';
+    }
+  });
+  if(!ok) return;
+  candidate = {
+    name:    document.getElementById('reg-name').value.trim(),
+    email:   document.getElementById('reg-email').value.trim(),
+    phone:   document.getElementById('reg-phone').value.trim(),
+    address: document.getElementById('reg-address').value.trim(),
+    city:    document.getElementById('reg-city').value.trim(),
+    country: document.getElementById('reg-country').value.trim(),
+    started: new Date().toISOString()
+  };
+  // Unlock tabs
+  document.querySelectorAll('#tabs button[disabled]').forEach(b=>b.removeAttribute('disabled'));
+  showTab('listening');
+});
+
+/* ── Timers ── */
+const DUR={listening:600,reading:1200,writing:3600};
+const remaining={...DUR};
+let activeSection=null, ticker=null, listeningStarted=false;
+const timerEl=document.getElementById('timer');
+function fmt(s){return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');}
+function startSectionTimer(name){
+  if(!(name in DUR)){clearInterval(ticker);timerEl.textContent='--:--';timerEl.classList.remove('low');return;}
+  if(name==='listening'&&!listeningStarted){timerEl.textContent=fmt(remaining.listening);return;}
+  activeSection=name; clearInterval(ticker);
+  timerEl.textContent=fmt(remaining[name]);
+  ticker=setInterval(()=>{
+    if(remaining[activeSection]>0){
+      remaining[activeSection]--;
+      timerEl.textContent=fmt(remaining[activeSection]);
+      timerEl.classList.toggle('low',remaining[activeSection]<60);
+      if(remaining[activeSection]===0) alert('Time is up for this section.');
+    }
+  },1000);
+}
+
+/* ── Audio ── */
+const SCRIPT=[
+  ["Tom","Good morning, Harbourside Leisure Centre, this is Tom speaking. How can I help you?"],
+  ["Sarah","Oh hello. I'd like to register for one of your group fitness classes, please."],
+  ["Tom","Of course. Can I take your name first?"],
+  ["Sarah","Yes, it's Sarah Watkins. That's W, A, T, K, I, N, S."],
+  ["Tom","W, A, T, K, I, N, S. Lovely. And a contact number?"],
+  ["Sarah","It's oh two seven... five five five... eight two one four."],
+  ["Tom","Oh two seven, five five five, eight two one four. Got it. Which class were you interested in?"],
+  ["Sarah","Well, I was thinking about yoga at first, but actually I'd prefer the beginners' Pilates class."],
+  ["Tom","Good choice. Now, the Pilates class used to run on Tuesday evenings, but from this month it has moved to Thursday evenings, at half past six."],
+  ["Sarah","Thursday evenings, perfect. Do I need to bring any equipment?"],
+  ["Tom","We provide all the mats, so the only thing you'll need to bring is a towel."],
+  ["Sarah","A towel, no problem. And how much does each class cost?"],
+  ["Tom","The casual rate at the door is eighteen dollars, but if you book online in advance it's only fifteen dollars per class."],
+  ["Sarah","Oh, I'll definitely book online then. Is there parking at the centre?"],
+  ["Tom","There is. During the day it's paid parking, but it becomes free after six pm, so for an evening class you won't pay anything."],
+  ["Sarah","That's great. Is there anything I need to bring when I register?"],
+  ["Tom","Just some photo identification — a driver's licence or passport is fine. We don't need proof of address or anything medical."],
+  ["Sarah","Wonderful. Thanks so much for your help, Tom."],
+  ["Tom","You're welcome, Sarah. We'll see you Thursday!"]
+];
+const playBtn=document.getElementById('playBtn');
+const eqEl=document.getElementById('eq');
+const audioStatus=document.getElementById('audioStatus');
+let played=false;
+if('speechSynthesis' in window) speechSynthesis.getVoices();
+
+function speakScript(){
+  if(!('speechSynthesis' in window)){showTranscript();return;}
+  speechSynthesis.cancel();
+  eqEl.classList.add('playing');
+  audioStatus.textContent='Playing… answer Questions 1–8.';
+  const voices=speechSynthesis.getVoices();
+  const en=voices.filter(v=>v.lang&&v.lang.startsWith('en'));
+  const v1=en[0]||null, v2=en.find(v=>v!==v1)||v1;
+  let idx=0;
+  function next(){
+    if(idx>=SCRIPT.length){
+      eqEl.classList.remove('playing');
+      audioStatus.textContent='Recording finished.';
+      playBtn.textContent='↻ Replay (practice only)';
+      playBtn.disabled=false; return;
+    }
+    const [who,line]=SCRIPT[idx++];
+    const u=new SpeechSynthesisUtterance(line);
+    u.rate=0.95; u.pitch=who==='Sarah'?1.25:0.9;
+    if(who==='Sarah'&&v2) u.voice=v2; else if(v1) u.voice=v1;
+    u.onend=()=>setTimeout(next,250); u.onerror=()=>setTimeout(next,250);
+    speechSynthesis.speak(u);
+  }
+  next();
+}
+function showTranscript(){
+  const t=document.createElement('details');
+  t.style.margin='0 0 18px';
+  t.innerHTML='<summary style="cursor:pointer;font-weight:600;font-size:.88rem">Show transcript</summary><div style="font-size:.88rem;margin-top:10px;line-height:1.7">'+SCRIPT.map(s=>'<p><strong>'+s[0]+':</strong> '+s[1]+'</p>').join('')+'</div>';
+  document.querySelector('.player').after(t);
+}
+playBtn.addEventListener('click',()=>{
+  playBtn.disabled=true;
+  if(!played){
+    played=true; listeningStarted=true;
+    activeSection='listening'; clearInterval(ticker);
+    ticker=setInterval(()=>{
+      if(remaining.listening>0){
+        remaining.listening--;
+        timerEl.textContent=fmt(remaining.listening);
+        timerEl.classList.toggle('low',remaining.listening<60);
+      }
+    },1000);
+    timerEl.textContent=fmt(remaining.listening);
+  }
+  speakScript();
+});
+
+/* ── Word counters ── */
+['task1','task2'].forEach((id,i)=>{
+  const min=[150,250][i], wcId=['wc1','wc2'][i];
+  document.getElementById(id).addEventListener('input',function(){
+    const n=this.value.trim()?this.value.trim().split(/\s+/).length:0;
+    const wc=document.getElementById(wcId);
+    wc.textContent=n+' words · minimum '+min;
+    wc.classList.toggle('ok',n>=min);
+  });
+});
+
+/* ── Submit ── */
+document.getElementById('finishBtn').addEventListener('click',()=>{
+  const btn=document.getElementById('finishBtn');
+  btn.disabled=true;
+  btn.innerHTML='<span class="spinner"></span> Submitting…';
+
+  const payload = {
+    ...candidate,
+    submitted: new Date().toISOString(),
+    q1:answers[1]||'', q2:answers[2]||'', q3:answers[3]||'',
+    q4:answers[4]||'', q5:answers[5]||'', q6:answers[6]||'',
+    q7:answers[7]||'', q8:answers[8]||'', q9:answers[9]||'',
+    q10:answers[10]||'',q11:answers[11]||'',q12:answers[12]||'',
+    q13:answers[13]||'',q14:answers[14]||'',q15:answers[15]||'',
+    q16:answers[16]||'',q17:answers[17]||'',q18:answers[18]||'',
+    q19:answers[19]||'',q20:answers[20]||'',q21:answers[21]||'',
+    writing1: document.getElementById('task1').value,
+    writing2: document.getElementById('task2').value
+  };
+
+  // Remove nav tabs
+  document.getElementById('tabs').style.display='none';
+
+  if(WEBAPP_URL === 'YOUR_GOOGLE_APPS_SCRIPT_WEBAPP_URL_HERE'){
+    // Demo mode — no real submission
+    showSubmitted('(Demo mode — no Web App URL configured yet.)');
+    return;
+  }
+
+  fetch(WEBAPP_URL, {
+    method:'POST',
+    mode:'no-cors',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify(payload)
+  })
+  .then(()=> showSubmitted('Your answers have been saved to your instructor\'s Google Sheet.'))
+  .catch(()=> showSubmitted('Submission sent. If you see a network error, your instructor may need to check the Web App URL.'));
+});
+
+function showSubmitted(note){
+  document.getElementById('submitStatus').textContent = note;
+  showTab('submitted');
+}
+})();
+</script>
+</body>
+</html>
